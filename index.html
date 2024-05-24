@@ -7,31 +7,53 @@
     <link rel="stylesheet" href="style.css" />
     <title>Simple Background Remover</title>
   </head>
-  <body> 
-    <div class="container"> 
-        <h1>Image Background Remover</h1> 
-        <div class="input-file"> 
-            <label for="userImg" class="info_text"> 
-                Select a File 
-            </label> 
-            <input type="file" id="userImg" 
-                class="form-control-file" required> 
-        </div> 
-        <div class="d-flex mb-4"> 
-            <div id="imagePreview" class="image-preview"></div> 
-            <div id="bgRemove" class="image-preview"></div> 
-        </div> 
-        <a id="downloadButton" class="btn btn-download" 
-            style="display: none;"> 
-            Download 
-        </a> 
-        <div> 
-            <button id="removeBackground" class="btn btn-primary"> 
-                Remove Background 
-            </button> 
-        </div> 
-    </div> 
-    <script src="script.js"></script> 
-</body> 
+  <body>
+    <div class="container">
+      <h1>Remove The Background From Your Image</h1>
+
+      <form>
+        <div class="img">
+          <img id="uploadedImage" src="/Images/removebg.jpg" alt="image" />
+        </div>
+        <div class="btn">
+          <input
+            type="file"
+            id="fileInput"
+            accept=".jpg, .jpeg, .png"
+            style="display: none"
+          />
+          <label id="file" for="fileInput" class="custom-file-input"
+            >Choose File</label
+          >
+
+          <button
+            type="button"
+            id="removeBgButton"
+            onclick="submitHandler()"
+            style="background-color: #5c196e"
+          >
+            <span class="btn__text">Upload</span>
+          </button>
+
+          <div class="btn-container">
+            <button
+              onclick="reset()"
+              id="reloadBtn"
+              style="background-color: #ff5252"
+            >
+              Reset
+            </button>
+            <button
+              style="background-color: #009579"
+              onclick="downloadFile()"
+              id="downloadBtn"
+            >
+              Download
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
   <script src="main.js"></script>
 </html>
